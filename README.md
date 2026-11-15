@@ -38,11 +38,25 @@ xattr -cr /Applications/聽打小幫手.app
 
 如果出現「“聽打小幫手”已損毀，無法打開。你應該將它丟到垃圾桶」（英文是 “聽打小幫手” is damaged and can’t be opened），不是檔案壞掉，而是程式尚未經過 Apple 簽章，被 macOS 擋下來。請先把 .app 拖到「應用程式」資料夾，再用上面的 `xattr -cr /Applications/聽打小幫手.app` 指令處理，然後重新打開。每次下載新版後都要再執行一次。
 
-## AI 轉初稿與授權
+## AI 轉初稿
 
 第一次使用「AI 轉初稿」時，程式會從 Hugging Face 下載模型（預設是 Taiwan-Tongues 客語＋國語模型，約 3.2 GB，下載後會在本機轉成約 1.1 GB）。下載完成並核對檔案後，之後就可以完全離線使用。華語模型（Whisper turbo）也在選單裡，可另外下載。
 
-Taiwan-Tongues 模型採用 [TRAIL–TWM](https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0) 授權。程式會附上授權全文，AI 轉初稿視窗也有「授權」連結，並註明「初稿由 AI 產生，請人工校對」。匯出的字幕檔不會加上註記。請把 AI 輸出當作初稿，務必人工校對後再使用。
+程式會附上授權全文，AI 轉初稿視窗也有「授權」連結，並註明「初稿由 AI 產生，請人工校對」。匯出的字幕檔不會加上註記。授權與使用限制見下方說明。
+
+## 授權與使用限制
+
+聽打小幫手僅供內部及非商業用途使用，不得用於商業用途或販售。
+
+程式下載與使用的 AI 模型，各自依其原始授權條款使用：
+
+- Taiwan-Tongues-ASR-CE-v1.0 採用 [TRAIL – TWM Responsible AI License](https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0/blob/main/LICENSE)（[模型頁](https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0)）。
+- whisper.cpp 與 OpenAI Whisper 模型採用 MIT 授權，詳見 [whisper.cpp LICENSE](https://github.com/ggml-org/whisper.cpp/blob/master/LICENSE) 與 [OpenAI Whisper LICENSE](https://github.com/openai/whisper/blob/main/LICENSE)。
+- 以「選擇本機模型檔」自行載入的其他模型（例如 FormoSpeech，採用 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/)），須由使用者自行取得，並遵守該模型自己的授權條款。
+
+AI 產生的初稿僅供參考，須人工校對。
+
+本軟體依現況提供，不提供任何保證。
 
 ## 更新
 
