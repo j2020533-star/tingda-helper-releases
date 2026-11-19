@@ -16,6 +16,16 @@
 
 不確定自己的 Mac 是哪一種時：左上角蘋果選單 →「關於這台 Mac」。如果晶片寫 Apple M1、M2、M3、M4，請選 Apple 晶片版；寫 Intel 就選 Intel 版。
 
+## 贊助開發者
+
+聽打小幫手免費提供，若覺得好用，歡迎自願贊助開發者持續維護。贊助屬自願性質，不會解鎖任何功能，也不代表取得商業使用授權。
+
+[前往綠界贊助頁](https://p.ecpay.com.tw/BFBDAF1)（支援信用卡、ATM、超商代碼）
+
+<img src="assets/ecpay-qr.png" alt="手機掃描 QR Code 贊助" width="200">
+
+手機掃描 QR Code 贊助
+
 ## Windows 第一次開啟
 
 這份程式尚未做程式簽章，Windows 可能會出現 SmartScreen「Windows 已保護你的電腦」。請按「更多資訊」，再按「仍要執行」。
@@ -46,13 +56,13 @@ xattr -cr /Applications/聽打小幫手.app
 
 ## 授權與使用限制
 
-聽打小幫手僅供內部及非商業用途使用，不得用於商業用途或販售。
+聽打小幫手免費提供，但不得做商業用途。
 
-程式下載與使用的 AI 模型，各自依其原始授權條款使用：
+程式中使用的 AI 模型，其使用方式請參考各模型的授權條款：
 
 - Taiwan-Tongues-ASR-CE-v1.0 採用 [TRAIL – TWM Responsible AI License](https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0/blob/main/LICENSE)（[模型頁](https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0)）。
 - whisper.cpp 與 OpenAI Whisper 模型採用 MIT 授權，詳見 [whisper.cpp LICENSE](https://github.com/ggml-org/whisper.cpp/blob/master/LICENSE) 與 [OpenAI Whisper LICENSE](https://github.com/openai/whisper/blob/main/LICENSE)。
-- 以「選擇本機模型檔」自行載入的其他模型（例如 FormoSpeech，採用 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/)），須由使用者自行取得，並遵守該模型自己的授權條款。
+- 以「選擇本機模型檔」自行載入的其他模型（例如 FormoSpeech，採用 [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/) 非商業授權），須由使用者自行取得，並遵守該模型自己的授權條款。
 
 AI 產生的初稿僅供參考，須人工校對。
 
