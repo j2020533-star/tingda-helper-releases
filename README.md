@@ -2,11 +2,13 @@
 
 聽打小幫手是給電台聽打與字幕對時使用的單機工具。你可以在波形上拉字幕、邊聽邊打文稿，再匯出 SRT 或 TXT。程式不必安裝，也不必一直連網；第一次使用「AI 轉初稿」時，才會下載語音辨識模型。
 
+Tingda Helper is a standalone offline tool for radio-station transcription and subtitle timing. You can place subtitle blocks on a waveform, type while listening, and export SRT or TXT. It does not need a constant internet connection; a speech-recognition model is downloaded only the first time you use AI first-draft.
+
 這個儲存庫只放安裝檔與版本說明，不含原始碼。
 
 ## 下載
 
-請到 [Releases](https://github.com/j2020533-star/tingda-helper-releases/releases) 下載最新版本，依你的電腦選對檔案：
+目前最新版本是 [V5.7.0](https://github.com/j2020533-star/tingda-helper-releases/releases/tag/v5.7.0)。請到 [Releases](https://github.com/j2020533-star/tingda-helper-releases/releases) 下載，依你的電腦選對檔案：
 
 | 電腦 | 下載檔案 |
 | --- | --- |
