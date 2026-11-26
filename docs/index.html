@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聽打小幫手 — 台灣客語離線聽打與字幕打軸工具</title>
+  <meta name="description" content="聽打小幫手（Tingda Helper）是台灣客語離線聽打與字幕打軸工具。可在波形上拉字幕、邊聽邊打文稿，匯出 SRT 或 TXT。免費提供，不得做商業用途。">
+  <link rel="canonical" href="https://j2020533-star.github.io/tingda-helper-releases/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="聽打小幫手 — 台灣客語離線聽打與字幕打軸工具">
+  <meta property="og:description" content="離線聽打與字幕打軸。波形加字幕塊、自動打軸、匯出 SRT / TXT。免費提供，不得做商業用途。">
+  <meta property="og:url" content="https://j2020533-star.github.io/tingda-helper-releases/">
+  <meta property="og:image" content="https://j2020533-star.github.io/tingda-helper-releases/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="聽打小幫手 — 台灣客語離線聽打與字幕打軸工具">
+  <meta name="twitter:description" content="離線聽打與字幕打軸。波形加字幕塊、自動打軸、匯出 SRT / TXT。">
+  <meta name="twitter:image" content="https://j2020533-star.github.io/tingda-helper-releases/og-image.png">
+  <!-- Google Search Console 驗證：請將 Google 提供的 <meta name="google-site-verification" content="……"> 貼在這一行下方 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F4E4A'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='36' font-family='Noto Serif CJK TC,PingFang TC,serif' fill='%23F6F1E8'%3E聽%3C/text%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "聽打小幫手",
+    "alternateName": "Tingda Helper",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows, macOS",
+    "inLanguage": ["zh-Hant", "en", "zh-Hans", "ja", "ko", "vi", "id"],
+    "description": "台灣客語離線聽打與字幕打軸工具，可在波形上拉字幕、邊聽邊打文稿，並匯出 SRT 或 TXT。",
+    "url": "https://j2020533-star.github.io/tingda-helper-releases/",
+    "downloadUrl": "https://github.com/j2020533-star/tingda-helper-releases/releases/latest",
+    "softwareVersion": "5.7.0",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --bg-card: #fffdf8;
+      --ink: #1a1814;
+      --teal: #1f4e4a;
+      --teal-hover: #163a36;
+      --muted: #5a5248;
+      --line: #ddd4c4;
+      --gold: #b0893a;
+      --focus: #1f4e4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Iwanami Mincho", "Noto Serif CJK TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .sans, nav, h2, h3, .btn, table, .kicker, .en, code, .meta, footer {
+      font-family: "Noto Sans CJK TC", "Source Han Sans TC", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", sans-serif;
+    }
+    a { color: var(--teal); text-underline-offset: 0.18em; }
+    a:hover { color: var(--teal-hover); }
+    a:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+    .wrap {
+      width: min(760px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    header {
+      padding: 3.2rem 0 2.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--teal);
+      text-transform: uppercase;
+    }
+    .kicker::after {
+      content: "";
+      display: block;
+      width: 3.2rem;
+      height: 2px;
+      margin-top: 0.55rem;
+      background: var(--gold);
+    }
+    h1 {
+      margin: 1.1rem 0 0.4rem;
+      font-size: clamp(2.4rem, 7vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+    }
+    .lead {
+      margin: 0.4rem 0 0;
+      font-size: 1.15rem;
+      color: var(--teal);
+    }
+    .en {
+      margin: 0.55rem 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.6rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.25rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+    .btn-primary {
+      color: #fffdf8;
+      background: var(--teal);
+    }
+    .btn-primary:hover { background: var(--teal-hover); color: #fffdf8; }
+    .btn-ghost {
+      color: var(--teal);
+      background: transparent;
+      border: 1px solid var(--teal);
+    }
+    .btn-ghost:hover { background: #e7eee8; color: var(--teal-hover); }
+    main { padding: 2.2rem 0 3.5rem; }
+    section { margin: 2.6rem 0; }
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+    }
+    p { margin: 0 0 0.85rem; }
+    ul.features {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.features li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.3rem;
+      border-bottom: 1px solid var(--line);
+    }
+    ul.features li:last-child { border-bottom: 0; }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.15rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: var(--bg-card);
+    }
+    th, td {
+      text-align: left;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { background: #efe8d8; font-weight: 600; }
+    code, .file {
+      font-family: "Noto Sans Mono CJK TC", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: #efe8d8;
+      padding: 0.08em 0.35em;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+    pre {
+      margin: 0.8rem 0;
+      padding: 0.9rem 1rem;
+      background: #1a1814;
+      color: #f6f1e8;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+    }
+    .note, .sponsor {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+    }
+    .sponsor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .sponsor img {
+      width: 160px;
+      height: 160px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .sponsor .col { flex: 1 1 16rem; }
+    .meta { font-size: 0.9rem; color: var(--muted); }
+    ol { padding-left: 1.25rem; }
+    ol li { margin: 0.4rem 0; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.4rem 0 2.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    footer p { margin: 0.25rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="kicker">Tingda Helper</span>
+      <h1>聽打小幫手</h1>
+      <p class="lead">台灣客語離線聽打與字幕打軸工具</p>
+      <p class="en">An offline tool for Hakka and Mandarin transcription and subtitle timing. Export SRT or TXT.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/j2020533-star/tingda-helper-releases/releases/latest">下載最新版</a>
+        <a class="btn btn-ghost" href="#download">各平台檔名說明</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>這是什麼</h2>
+      <p>聽打小幫手是給電台聽打與字幕對時使用的單機工具，操作方式參考 Arctime。你可以在波形上拉字幕、邊聽邊打文稿，再匯出 SRT 或 TXT。程式不必安裝，也不必一直連網；第一次使用「AI 轉初稿」時，才會下載語音辨識模型。</p>
+      <p class="en">A standalone desktop app: place subtitle blocks on a waveform, type while listening, and export SRT or TXT. No installer and no constant internet connection are required.</p>
+    </section>
+
+    <section>
+      <h2>主要功能</h2>
+      <ul class="features">
+        <li>波形加上字幕塊，邊聽邊對時</li>
+        <li>文稿區按 Enter 自動打軸</li>
+        <li>點文稿區的句子，波形與影片會跳到該句時間</li>
+        <li>快捷鍵、吸附、警示、尋找取代、專案存檔</li>
+        <li>匯出 SRT 或 TXT（檔案本身不加標註）</li>
+        <li>本機 AI 轉初稿（whisper.cpp）：預設 Taiwan-Tongues 客語＋國語模型，也可選 Whisper turbo，或自行載入本機模型檔</li>
+        <li>模型只需第一次下載，之後可完全離線使用</li>
+        <li>介面支援七種語言：繁體中文、英文、簡體中文、日文、韓文、越南文、印尼文</li>
+        <li>免安裝桌面版，提供 Windows 與 Mac（Apple 晶片／Intel）</li>
+      </ul>
+    </section>
+
+    <section id="download">
+      <h2>下載</h2>
+      <p>目前最新版本是 <a href="https://github.com/j2020533-star/tingda-helper-releases/releases/tag/v5.7.0">V5.7.0</a>。請到 <a href="https://github.com/j2020533-star/tingda-helper-releases/releases/latest">Releases 最新版</a> 下載，依你的電腦選對檔案：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>電腦</th>
+            <th>下載檔案</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Windows（64 位元）</td>
+            <td><code>TingdaHelper-x.y.z-win-x64-portable.exe</code></td>
+          </tr>
+          <tr>
+            <td>Mac（Apple 晶片，M 系列）</td>
+            <td><code>TingdaHelper-x.y.z-mac-arm64.tar.xz</code></td>
+          </tr>
+          <tr>
+            <td>Mac（Intel）</td>
+            <td><code>TingdaHelper-x.y.z-mac-x64.tar.xz</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="meta" style="margin-top:0.8rem;">不確定自己的 Mac 是哪一種時：左上角蘋果選單 →「關於這台 Mac」。如果晶片寫 Apple M1、M2、M3、M4，請選 Apple 晶片版；寫 Intel 就選 Intel 版。</p>
+      <p><a class="btn btn-primary" href="https://github.com/j2020533-star/tingda-helper-releases/releases/latest">前往最新版本下載</a></p>
+    </section>
+
+    <section>
+      <h2>第一次開啟</h2>
+      <div class="note">
+        <h3 style="margin:0 0 0.5rem;font-size:1.02rem;">Windows</h3>
+        <p>這份程式尚未做程式簽章，Windows 可能會出現 SmartScreen「Windows 已保護你的電腦」。請按「更多資訊」，再按「仍要執行」。這是免安裝版本，下載後直接開啟即可。</p>
+        <h3 style="margin:1rem 0 0.5rem;font-size:1.02rem;">Mac</h3>
+        <p>這份程式尚未通過 Apple 簽章與公證，第一次開啟可能會看到「無法打開，因為無法確認開發者」，或提示「已損毀，無法打開」。不是檔案壞掉，而是被 macOS 擋下來。請依下列方式打開：</p>
+        <ol>
+          <li>先把 <code>.tar.xz</code> 解壓縮（可雙擊，或在「終端機」執行 <code>tar -xJf 檔名.tar.xz</code>），會得到「聽打小幫手.app」。建議把它拖到「應用程式」資料夾。</li>
+          <li>按住 Control 鍵再點一下「聽打小幫手.app」（或按右鍵），選「打開」，接著在提示視窗再按一次「打開」。</li>
+          <li>如果還是被擋下來，請打開「終端機」，執行：</li>
+        </ol>
+        <pre><code>xattr -cr /Applications/聽打小幫手.app</code></pre>
+        <p>然後再從「應用程式」打開一次。也可以到「系統設定」→「隱私權與安全性」，在被擋下的提示旁按「仍要打開」。每次下載新版後都要再執行一次上述指令。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>AI 轉初稿</h2>
+      <p>第一次使用「AI 轉初稿」時，程式會從 Hugging Face 下載模型（預設是 Taiwan-Tongues 客語＋國語模型，約 3.2 GB，下載後會在本機轉成約 1.1 GB）。下載完成並核對檔案後，之後就可以完全離線使用。華語模型（Whisper turbo）也在選單裡，可另外下載。</p>
+      <p>AI 轉初稿視窗會註明「初稿由 AI 產生，請人工校對」，並附授權說明。匯出的 SRT / TXT 不會加上註記。</p>
+    </section>
+
+    <section>
+      <h2>授權與使用限制</h2>
+      <p>聽打小幫手免費提供，但不得做商業用途。程式中使用的 AI 模型，其使用方式請參考各模型的授權條款：</p>
+      <ul>
+        <li>Taiwan-Tongues-ASR-CE-v1.0 採用 <a href="https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0/blob/main/LICENSE">TRAIL – TWM Responsible AI License</a>（<a href="https://huggingface.co/adi-gov-tw/Taiwan-Tongues-ASR-CE-v1.0">模型頁</a>）。</li>
+        <li>whisper.cpp 與 OpenAI Whisper 模型採用 MIT 授權，詳見 <a href="https://github.com/ggml-org/whisper.cpp/blob/master/LICENSE">whisper.cpp LICENSE</a> 與 <a href="https://github.com/openai/whisper/blob/main/LICENSE">OpenAI Whisper LICENSE</a>。</li>
+        <li>以「選擇本機模型檔」自行載入的其他模型（例如 FormoSpeech，採用 <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a> 非商業授權），須由使用者自行取得，並遵守該模型自己的授權條款。</li>
+      </ul>
+      <p>AI 產生的初稿僅供參考，須人工校對。本軟體依現況提供，不提供任何保證。</p>
+    </section>
+
+    <section>
+      <h2>贊助開發者</h2>
+      <div class="sponsor">
+        <img src="assets/ecpay-qr.png" width="160" height="160" alt="綠界贊助 QR Code，可用手機掃描">
+        <div class="col">
+          <p>聽打小幫手免費提供。若覺得好用，歡迎自願贊助開發者持續維護。贊助屬自願性質，不會解鎖任何功能，也不代表取得商業使用授權。</p>
+          <p><a class="btn btn-primary" href="https://p.ecpay.com.tw/BFBDAF1">前往綠界贊助頁</a></p>
+          <p class="meta">支援信用卡、ATM、超商代碼。也可用手機掃描左側 QR Code。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>官方網頁：<a href="https://j2020533-star.github.io/tingda-helper-releases/">j2020533-star.github.io/tingda-helper-releases</a></p>
+      <p>安裝檔發布於 <a href="https://github.com/j2020533-star/tingda-helper-releases">GitHub Releases</a>。這個倉庫只放安裝檔與說明，不含原始碼。</p>
+      <p>使用問題回報：<a href="mailto:j2020533@gmail.com">j2020533@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

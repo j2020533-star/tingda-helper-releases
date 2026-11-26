@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://j2020533-star.github.io/tingda-helper-releases/sitemap.xml

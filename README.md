@@ -6,6 +6,8 @@ Tingda Helper is a standalone offline tool for radio-station transcription and s
 
 這個儲存庫只放安裝檔與版本說明，不含原始碼。
 
+官方網頁：https://j2020533-star.github.io/tingda-helper-releases/
+
 ## 下載
 
 目前最新版本是 [V5.7.0](https://github.com/j2020533-star/tingda-helper-releases/releases/tag/v5.7.0)。請到 [Releases](https://github.com/j2020533-star/tingda-helper-releases/releases) 下載，依你的電腦選對檔案：
